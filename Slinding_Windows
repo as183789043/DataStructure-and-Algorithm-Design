@@ -1,0 +1,30 @@
+console.log(max_sum([2, 7, 3, 0, 6, 1, -5, -12, -11], 3));
+console.log(min_sum([2, 7, 3, 0, 6, 1, -5, -12, -11], 3));
+
+function max_sum(arr, size) {
+  let max_number = -Infinity;
+  for (let i = 0; i <= arr.length - size; i++) {
+    let temp_sum = 0;
+    for (let j = i; j < i + size; j++) {
+      temp_sum += arr[j];
+      if (temp_sum > max_number) {
+        max_number = temp_sum;
+      }
+    }
+  }
+  return max_number;
+}
+
+function min_sum(arr, size) {
+  let min_number = Infinity;
+  for (let i = 0; i <= arr.length - size; i++) {
+    let temp_sum = 0;
+    for (let j = i; j < i + size; j++) {
+      temp_sum += arr[j];
+      if (temp_sum < min_number) {
+        max_number = temp_sum;
+      }
+    }
+  }
+  return max_number;
+}
